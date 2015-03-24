@@ -145,3 +145,10 @@ def test_writer_2():
     w.consume(read_iter)
 
     assert fp.getvalue() == '>foo bar\nATCG\n'
+
+def test_slicing(self):
+    it = screed.open('screed/test/test.fa')
+    r = it.next()
+    slice = r[:10]
+
+    assert len(slice['accuracy']) == 10

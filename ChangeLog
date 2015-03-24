@@ -1,3 +1,8 @@
+2015-03-24  Michael Wright  <wrigh517@msu.edu>
+
+   * screedRecord.py: Allow slicing of screed records to fix issue 768
+   https://github.com/ged-lab/khmer/issues/768
+
 2015-02-23  Gabriel Pratt  <gpratt@ucsd.edu>
 
    * Fixed Issue 705 len(read) != len(read.sequence)
