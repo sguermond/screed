@@ -146,9 +146,9 @@ def test_writer_2():
 
     assert fp.getvalue() == '>foo bar\nATCG\n'
 
-def test_slicing(self):
-    it = screed.open('screed/test/test.fa')
-    r = it.next()
-    slice = r[:10]
+def test_slicing():
+    index = screed.open('screed/tests/test.fa')
+    record = index.next()
+    test_slice = record[:10]['name']
 
-    assert len(slice['accuracy']) == 10
+    assert test_slice == "ENSMICT00000012722"

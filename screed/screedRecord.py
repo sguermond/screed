@@ -33,7 +33,7 @@ class _screed_record_dict(UserDict.DictMixin):
         return self.d.keys()
 
     def __getitem__(self, idx):
-        if type(idx) is slice:
+        if isinstance(idx, slice):
             new_read = _screed_record_dict(self)
             new_read['sequence'] = new_read.sequence[idx]
             if hasattr(new_read, 'accuracy'):
@@ -43,6 +43,7 @@ class _screed_record_dict(UserDict.DictMixin):
             return new_read
         else:
             return self.d[idx]
+
 
 class _screed_attr(object):
 
