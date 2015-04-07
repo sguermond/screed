@@ -146,9 +146,14 @@ def test_writer_2():
 
     assert fp.getvalue() == '>foo bar\nATCG\n'
 
-def test_slicing():
-    index = screed.open('screed/tests/test.fa')
-    record = index.next()
-    test_slice = record[:10]['name']
+class Test_slicing(object):
 
-    assert test_slice == "ENSMICT00000012722"
+    def setup(self):
+        self._testfa = os.path.join(os.path.dirname(__file__),
+                                    'test.fa')
+        self._index = screed.open(self._testfa)
+        self._record = self._index.next()
+
+    def test_slicing(self):
+        test_slice = self._record[:10]['name']
+        assert test_slice == "ENSMICT00000012722"
