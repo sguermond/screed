@@ -1,13 +1,18 @@
 from __future__ import absolute_import
 import os
 import types
-import UserDict
 import sqlite3
 import gzip
 import bz2file
-import StringIO
 import io
 import sys
+
+try:
+    from collections import MutableMapping
+except ImportError:
+    import UserDict
+    MutableMapping = UserDict.DictMixin
+
 
 from . import DBConstants
 from . import screedRecord
@@ -78,7 +83,7 @@ _open = open
 open = open_reader
 
 
-class ScreedDB(object, UserDict.DictMixin):
+class ScreedDB(MutableMapping):
 
     """
     Core on-disk dictionary interface for reading screed databases. Accepts a
