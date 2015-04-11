@@ -1,6 +1,7 @@
+from __future__ import absolute_import
 import os.path
 import sys
-import screed_tst_utils as utils
+from . import screed_tst_utils as utils
 import screed
 import screed.openscreed
 

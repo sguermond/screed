@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import os
 import types
 import UserDict
@@ -8,10 +9,10 @@ import StringIO
 import io
 import sys
 
-import DBConstants
-import screedRecord
-from fastq import fastq_iter, FASTQ_Writer
-from fasta import fasta_iter, FASTA_Writer
+from . import DBConstants
+from . import screedRecord
+from .fastq import fastq_iter, FASTQ_Writer
+from .fasta import fasta_iter, FASTA_Writer
 
 
 def get_writer_class(read_iter):

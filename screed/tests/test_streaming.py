@@ -1,5 +1,7 @@
-import test_fasta
-import test_fastq
+from __future__ import print_function
+from __future__ import absolute_import
+from . import test_fasta
+from . import test_fastq
 import tempfile
 import os
 import sys
@@ -7,7 +9,7 @@ import io
 import threading
 import subprocess
 import screed
-import screed_tst_utils as utils
+from . import screed_tst_utils as utils
 from nose.plugins.attrib import attr
 from screed.DBConstants import fileExtension
 
@@ -70,7 +72,7 @@ def test_stream_gz_fail():
         streamer(utils.get_test_data('test.fastq.gz'))
         assert 0, "This should not work yet"
     except ValueError as err:
-        print str(err)
+        print(str(err))
 
 
 @attr('known_failing')
