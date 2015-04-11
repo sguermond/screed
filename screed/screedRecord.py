@@ -43,9 +43,6 @@ class _screed_record_dict(MutableMapping):
     def __iter__(self):
         return iter(self.d)
 
-    def __len__(self):
-        return len(self.d)
-
 
 class _screed_attr(object):
 
